@@ -15,43 +15,11 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class PlayerListener implements Listener{
-	public PlayerListener(Main plugin){
-		plugin.getServer().getPluginManager().registerEvents(this, plugin);
-	}
-	
-	
-
 	@EventHandler
-	public void MagmaStrider(PlayerToggleSneakEvent event){
-		Player player = event.getPlayer();
-		
-		PlayerInventory inventory = player.getInventory();
-		ItemStack boots = inventory.getItem(313);
-		 boolean Magma = boots.containsEnchantment(Enchantment.DEPTH_STRIDER);
-		Magma=false;
-		
-		if(boots.containsEnchantment(Enchantment.DEPTH_STRIDER)){
-			//player.addPotionEffect(PotionEffectType.LEVITATION(1,1, 1));
-			
-			 
-	       
-	     
-	        
-	        
-	         Magma=true;
-		}
-		if(Magma==true){
-			//player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 5, 1));
-			player.setWalkSpeed(1);
-		}
-		else{
-			Magma=false;
-		}
-		
-		
-		
-		
-			
+	public void onPlayerMove(PlayerMoveEvent e){
+		Player p = e.getPlayer();
+		PlayerInventory inventory = p.getInventory();
+	    ItemStack boots = inventory.getItem(313);
+	    if(boots.containsEnchantment(Enchantment.DEPTH_STRIDER)){
+					
 	}
-	}
-
