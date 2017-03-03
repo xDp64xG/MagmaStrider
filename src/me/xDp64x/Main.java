@@ -6,8 +6,7 @@ public class Main extends JavaPlugin {
 
 	@Override
 	public void onEnable(){
-		//new PlayerListener(this);
-		new PlayerListener(this);
+		 Bukkit.getPluginManager.registerEvents(new PlayerListener(), this);
 	}
 	@Override
 	public void onDisable(){
