@@ -23,22 +23,26 @@ public class PlayerListener implements Listener{
 	    
 	    
 	    
-	   
+		/*
+		 * If location is lava
+		 */
 				
-				/*
-				 * See if the player has 15 levels of EXP
-				 */
+				
 			
-	    if(p.getLevel()>=15){
+	    
+	    	if(p.getLocation().getBlock().getType() == org.bukkit.Material.LAVA || p.getLocation().getBlock().getType() == org.bukkit.Material.STATIONARY_LAVA){
+	    
 					System.out.println("Ping");
 					p.setFireTicks(0);
 					
-					/*
-					 * If location is lava
-					 */
-						
 					
-				if(p.getLocation().getBlock().getType() == org.bukkit.Material.LAVA || p.getLocation().getBlock().getType() == org.bukkit.Material.STATIONARY_LAVA){
+						
+					/*
+					 * See if the player has 15 levels of EXP
+					 */
+				
+					 if(p.getLevel()>=15){
+					
 					/*
 					 * Set velocity while in lava, increasing speed
 					 */
